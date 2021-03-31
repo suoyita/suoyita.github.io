@@ -6,7 +6,7 @@
   <link href="https://suoyita.github.io/feed.xml" rel="self"/>
   
   <link href="https://suoyita.github.io/"/>
-  <updated>2021-03-27T08:13:50.459Z</updated>
+  <updated>2021-03-31T00:53:13.326Z</updated>
   <id>https://suoyita.github.io/</id>
   
   <author>
@@ -17,10 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>XCode introduction</title>
+    <link href="https://suoyita.github.io/archives/a084818e.html"/>
+    <id>https://suoyita.github.io/archives/a084818e.html</id>
+    <published>2021-03-31T00:51:53.000Z</published>
+    <updated>2021-03-31T00:53:13.326Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;XCode 作为 iOS 开发的主力编辑器，是我们在学习 iOS 开发过程中必须熟悉掌握的。这篇文章我们将要简单介绍一些 XCode 的功能。</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://suoyita.github.io/tags/iOS/"/>
+    
+    <category term="XCode" scheme="https://suoyita.github.io/tags/XCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://suoyita.github.io/archives/4a17b156.html"/>
     <id>https://suoyita.github.io/archives/4a17b156.html</id>
-    <published>2021-03-27T04:57:43.077Z</published>
+    <published>2021-03-27T04:57:44.000Z</published>
     <updated>2021-03-27T08:13:50.459Z</updated>
     
     

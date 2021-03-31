@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoWoB1CIL5FkYR_0sc7BborPmhz4ftuBYyvaKt6i-IQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"suoyita.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="XCode 作为 iOS 开发的主力编辑器，是我们在学习 iOS 开发过程中必须熟悉掌握的。这篇文章我们将要简单介绍一些 XCode 的功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XCode introduction">
+<meta property="og:url" content="https://suoyita.github.io/archives/a084818e.html">
+<meta property="og:site_name" content="血色浪漫">
+<meta property="og:description" content="XCode 作为 iOS 开发的主力编辑器，是我们在学习 iOS 开发过程中必须熟悉掌握的。这篇文章我们将要简单介绍一些 XCode 的功能。">
+<meta property="og:locale">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7srpm0exj21670u0jtt.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7tpij40gj20ec0li0vq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7tseoprfj20em0ecdhj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vpiqnqzj30ji0ksq3k.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vv7de9rj32a80jygnd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vxrrpn3j30k60pm3zg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vy29mvlj30js0n8dgk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7u9linpuj20p40ecq5d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7udkhvu2j20g20f60ta.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7urt2uxwj315s0u0jzi.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7wrda6hbj30ro10on0t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7zit9on1j30hs0cqweq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7ulyptmdj217m0he0w9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go7z3tzj99j30ti0d4dgs.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go8078kow1j311s0dut9f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1go808kpff2j311s0duwfc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1goca0at896j31z90u04au.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gocb2hwyimj31ev0u04ee.jpg">
+<meta property="article:published_time" content="2021-03-31T00:51:53.000Z">
+<meta property="article:modified_time" content="2021-03-31T00:53:13.326Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="XCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1go7srpm0exj21670u0jtt.jpg">
+
+<link rel="canonical" href="https://suoyita.github.io/archives/a084818e.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>XCode introduction | 血色浪漫</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=266959152"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '266959152');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/feed.xml" title="血色浪漫" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">血色浪漫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://suoyita.github.io/archives/a084818e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="血色浪漫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          XCode introduction
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-31 08:51:53 / Modified: 08:53:13" itemprop="dateCreated datePublished" datetime="2021-03-31T08:51:53+08:00">2021-03-31</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>XCode 作为 iOS 开发的主力编辑器，是我们在学习 iOS 开发过程中必须熟悉掌握的。这篇文章我们将要简单介绍一些 XCode 的功能。<span id="more"></span></p>
+<h1 id="XCode-Overview"><a href="#XCode-Overview" class="headerlink" title="XCode Overview"></a>XCode Overview</h1><h2 id="1-主界面"><a href="#1-主界面" class="headerlink" title="1.  主界面"></a>1.  主界面</h2><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7srpm0exj21670u0jtt.jpg" style="zoom:50%;" />
+
+<h3 id="1-1-Navigator-Area"><a href="#1-1-Navigator-Area" class="headerlink" title="1.1 Navigator Area"></a>1.1 Navigator Area</h3><ul>
+<li><p>文件导航栏：</p>
+<p>创建文件和文件夹，编辑文件，创建 group 管理文件。</p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7tpij40gj20ec0li0vq.jpg" style="zoom:50%;" /></li>
+<li><p>搜索栏：</p>
+<p>搜索整个项目文件中特定的属性、方法、变量等，支持正则表达式。快捷键<strong>cmd+shift+F</strong>。</p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7tseoprfj20em0ecdhj.jpg" style="zoom:50%;" /></li>
+<li><p>问题显示栏：</p>
+</li>
+</ul>
+<p>  显示项目编译运行过程中的 warning或 error 信息。</p>
+<pre><code>&lt;img src=&quot;https://tva1.sinaimg.cn/large/e6c9d24egy1go7txemhmzj20f00bk0tv.jpg&quot; style=&quot;zoom:50%;&quot; /&gt;
+</code></pre>
+<h3 id="1-2-实用工具栏"><a href="#1-2-实用工具栏" class="headerlink" title="1.2 实用工具栏"></a>1.2 实用工具栏</h3><p>主界面右侧的Utility Area是用来展示代码文件、ui界面等的详细信息的。</p>
+<ul>
+<li><p>File Inspector: </p>
+<p>  File Inspector 是在 Utility Area 中用来展示在 File navigator中选择的文件的具体信息，例如文件存储的具体位置等。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vpiqnqzj30ji0ksq3k.jpg" style="zoom:50%;" /></li>
+<li><p>Quick Help Inspector:</p>
+<p>  Quickk Help Inspector 展示鼠标指针所在的方法、类等的具体文档的。</p>
+<p>  同时如果文档中没有信息的，我们可以自己通过注释的方式建立文档。具体操作方法是在某段代码的前一行使用**///**进行注释。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vv7de9rj32a80jygnd.jpg" style="zoom:50%;" /></li>
+<li><p>Attributes Inspector and Size Inspector</p>
+<p>  只有在 Storyboard 中选择 UI 元素时才会出现，主要用来定制 ui 元素。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vxrrpn3j30k60pm3zg.jpg" style="zoom:50%;" /></li>
+</ul>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7vy29mvlj30js0n8dgk.jpg" style="zoom:50%;" />
+
+
+
+<h3 id="1-3-Editor-Area"><a href="#1-3-Editor-Area" class="headerlink" title="1.3 Editor Area"></a>1.3 Editor Area</h3><ul>
+<li><p>Jump Bar：</p>
+<p>  可以使用编辑区上方的jump bar 进行文件跳转并且在某个文件内部使用 jump bar 可以跳转到某个具体的方法等。</p>
+  <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7u9linpuj20p40ecq5d.jpg" style="zoom:50%;" /></li>
+<li><p>跳转到定义：</p>
+<p>  按住<strong>Command</strong>键点击某个类的名字，可以快速跳转到定义该类的文件。</p>
+  <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7udkhvu2j20g20f60ta.jpg" style="zoom:50%;" /></li>
+<li><p>配置项目属性：</p>
+<p>  单击导航栏上的根项目在编辑区会出现配置项目属性的选项。</p>
+<p>  在这里可以配置项目的各种属性，例如：</p>
+<ul>
+<li>app 名字</li>
+<li>bundle identifier (app 的独有 id)</li>
+</ul>
+</li>
+<li><p>设置 app 版本</p>
+<ul>
+<li>添加额外的框架或库文件</li>
+</ul>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7urt2uxwj315s0u0jzi.jpg" style="zoom: 50%;" /></li>
+<li><p>注释：</p>
+<p>  选择某一个方法或者变量名，使用快捷键<strong>Command+option+/<strong>可以在前一行生成一行注释，以///开头，可以添加描述以及参数说明。写好注释后按住</strong>option</strong>键鼠标指针会变成问号，点击变量或者方法名会弹出注释说明。</p>
+<p>  使用<strong>MARK</strong>, <strong>FIXME</strong>, <strong>TODO</strong>注释和组织代码。</p>
+<ul>
+<li>MARK 用来在一段代码开头进行说明。</li>
+<li>TODO 用来指示未来的工作。</li>
+<li>FIXME 用来说明需要在代码的什么地方进行修改。</li>
+</ul>
+<p>  他们都可以在 jump bar 和 minimap 上显示出来便于快速跳转。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7wrda6hbj30ro10on0t.jpg" style="zoom:50%;" /></li>
+</ul>
+<h2 id="2-调试"><a href="#2-调试" class="headerlink" title="2.  调试"></a>2.  调试</h2><h3 id="2-1-Crashes-Exception-和-Runtime-Issues-定位"><a href="#2-1-Crashes-Exception-和-Runtime-Issues-定位" class="headerlink" title="2.1 Crashes, Exception 和 Runtime Issues 定位"></a>2.1 Crashes, Exception 和 Runtime Issues 定位</h3><ul>
+<li>当 crash 停在 main 函数或者高亮出<strong>AppDelegate</strong>时通常是 Objective-C exception.</li>
+<li>当 crash 停在 main 函数或者高亮出<strong>AppDelegate</strong>并且有类似<u>“Thread 8: EXC_BAD_INSTRUCTION (code=…)”</u>信息时通常是 runtime issue.</li>
+</ul>
+<h3 id="2-2-检查系统资源过载"><a href="#2-2-检查系统资源过载" class="headerlink" title="2.2  检查系统资源过载"></a>2.2  检查系统资源过载</h3><p>在 Xcode 中提供了程序运行时的系统资源监控图标，用来监控 CPU、Memory 使用率以及磁盘、网络的 I/O速度。</p>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7zit9on1j30hs0cqweq.jpg" style="zoom:50%;" />
+
+<h3 id="2-3-设置断点"><a href="#2-3-设置断点" class="headerlink" title="2.3 设置断点"></a>2.3 设置断点</h3><ul>
+<li><p>断点：</p>
+<p>  单击代码区的行数会出现一个明亮的蓝色箭头，表示在该处设置了断点，再单击一下该箭头颜色会变暗，表示暂时在此处停止设置断点，再次单击恢复。如果想删除断点，按住该箭头并进行拖拽就会消失。同时左侧导航栏也可以显示所有设置的断点。</p>
+  <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1go7ulyptmdj217m0he0w9.jpg" style="zoom:50%;" />
+
+<ul>
+<li>选择<strong>Automatically continue after evaluating actions</strong>可以在不用暂停的情况下输出调试信息。</li>
+</ul>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go7z3tzj99j30ti0d4dgs.jpg" style="zoom:50%;" />
+
+<p>  我们也可以设置条件来让断点只在某些特定条件下触发：</p>
+<ul>
+<li><p>如果一个 bug 只在循环了一定遍数之后才会出现，我们可以通过编辑断点设置触发断点的循环遍数。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go8078kow1j311s0dut9f.jpg" style="zoom:50%;" /></li>
+<li><p>如果一个 bug 只在某些条件下才会触发，我们也可以通过编辑断点设置特定条件：</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1go808kpff2j311s0duwfc.jpg" style="zoom:50%;" /></li>
+</ul>
+<p>  在调试某些问题时，需要在源代码没有定义的符号处暂停，因此需要在断点栏出点击左下角的加号(➕) 来选择<strong>Symbolic Breakpoint</strong>。</p>
+<h3 id="2-4-Runtime-Issue"><a href="#2-4-Runtime-Issue" class="headerlink" title="2.4 Runtime Issue:"></a>2.4 Runtime Issue:</h3><p>  一些 Runtime Issue例如在主线程之外更新界面或者不安全地在不同线程更新变量的值等，可以在断点栏左下角添加<strong>Runtime Issue Breakpoint</strong>来检查，同时在设置里开启<strong>Address santizers</strong>来检查断点类型。</p>
+<h4 id="2-4-1-Address-santizers"><a href="#2-4-1-Address-santizers" class="headerlink" title="2.4.1   Address santizers"></a>2.4.1   <strong>Address santizers</strong></h4><p>  <strong>Address santizers</strong>是基于LLVM的适用Objective-C和Swift用于发现内存使用问题的工具。</p>
+<ul>
+<li><p>原理：启用Address Sanitizer后，会在APP中增加<code>libclang_rt.asan_ios_dynamic.dylib</code>，它将在运行时加载。Address Sanitizer替换了malloc和free的实现。当调用malloc函数时，它将分配指定大小的内存A，并将内存A周围的区域标记为”off-limits“。当free方法被调用时，内存A也被标记为”off-limits“，同时内存A被添加到隔离队列，这个操作将导致内存A无法再被重新malloc使用。当访问到被标记为”off-limits“的内存时，Address Sanitizer就会报告异常。</p>
+</li>
+<li><p>Address santizers可以用来检测内存使用错误如下：</p>
+<ul>
+<li><p>内存释放后又被使用</p>
+</li>
+<li><p>内存重复释放</p>
+</li>
+<li><p>释放未申请的内存</p>
+</li>
+<li><p>使用栈内存作为函数返回值</p>
+</li>
+<li><p>使用了超出作用域的栈内存</p>
+</li>
+<li><p>内存越界访问</p>
+</li>
+</ul>
+</li>
+<li><p>开启方法如下：</p>
+<p>  在Product的选项中选择Scheme以及Edit Scheme</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1goca0at896j31z90u04au.jpg" style="zoom:50%;" /></li>
+<li><p>使用限制：</p>
+<ol>
+<li><p>Address Santizers只有在代码运行阶段才能检测出内存使用错误，运行过程中无法保证代码所有的分支和逻辑都能执行，因此检测不全面。</p>
+</li>
+<li><p>Address Sanitizer不能检测内存泄露，访问未初始化的内存或整形溢出。</p>
+</li>
+</ol>
+</li>
+<li><p>性能影响：</p>
+<p>  开启Address Sanitizer，将使代码执行效率降低2-5倍，内存使用增加2-3倍。可以通过设置<code>-O1</code>优化级别来提高内存利用率。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Xcode快捷键"><a href="#3-Xcode快捷键" class="headerlink" title="3. Xcode快捷键"></a>3. Xcode快捷键</h2><p>熟练使用Xcode快捷键对于我们熟悉Xcode也十分重要，并且可以提高我们使用Xcode编程效率。</p>
+<h3 id="3-1-常用快捷键介绍"><a href="#3-1-常用快捷键介绍" class="headerlink" title="3.1 常用快捷键介绍"></a>3.1 常用快捷键介绍</h3><p><strong>1. 文件操作相关的快捷键</strong></p>
+<ol>
+<li>command + n 新建文件(new file)</li>
+<li>command + shift + n 新建工程(new project)</li>
+<li>command + o 打开工程(open project)</li>
+<li>command + shift + o 快速打开工程中的文件(open quickly)，类似于Spotlight的功能</li>
+<li>option + command + a 向工程中添加文件(add file to project)</li>
+<li>alt + command + w 关闭当前工程(close project) 和command + w的效果一样</li>
+</ol>
+<p><strong>2. 窗口导航快捷键</strong></p>
+<ol>
+<li>command + 0 切换左侧导航窗口的显示隐藏(hide/show Navigator)</li>
+<li>command + option + 0 切换右侧功能面板(hide/show Utilities)</li>
+<li>command + shift + y 切换底部调试区域(hide/show Debug area)</li>
+<li>command + 1 ~ 8 在工程导航窗口的8个tab间切换</li>
+<li>command + option + 1 ~ 4 在右侧功能面板的4个tab间切换</li>
+</ol>
+<p><strong>3. 代码编辑器里的快捷键</strong></p>
+<ol>
+<li>command + → 移动到一行末尾</li>
+<li>command + delete 删除一行代码，和上一个快捷键组合使用</li>
+<li>command + [ 或 ] 向前或向后调整代码缩进</li>
+<li>control + i 根据当前行代码所在位置自动调整缩进（可以先command + a全选然后调整所有代码的缩进）</li>
+<li>command + option + [ 或 ] 将代码上下移动一行</li>
+<li>control + command + ↑ 或 ↓ 在.m/.c/.cpp 文件和头文件.h之间切换</li>
+<li>esc 可以弹出对应的代码提示</li>
+<li>control + command + e 重构变量名，将光标放在变量名上或者双击选中这个变量，然后按该快捷键，就可以实现当前文件下所有用到该变量的地方进行修改</li>
+<li>command + \ 添加或者移除断点</li>
+<li>command + y 切换当前所有的断点的激活状态</li>
+</ol>
+<p><strong>4. storyboard中的快捷键</strong></p>
+<ol>
+<li>option + command + enter 切换到Assitant editor</li>
+<li>command + enter 从Assitant editor切换回storyboard编辑器界面</li>
+<li>command + -(减号键) 缩小storyboard界面</li>
+<li>command + shift + =(等号键) 放大storyboard界面，双击ViewControllerScene也可以将其缩放到合适的大小</li>
+<li>command + = 在选中控件的情况下按该快捷键会根据控件中的内容(如UILabel、UIButton中的文本)自动调整控件的大小</li>
+<li>command + option + = 同样是选中控件的情况下，可以根据控件的约束更新位置(update frame)</li>
+<li>另外在storyboard界面通过command + shift + o 搜索到对应的文件后，按住option键双击或者按回车这个文件可以以Assitant Editor的形式在右侧打开该文件</li>
+</ol>
+<p><strong>5. Debug相关快捷键</strong></p>
+<ol>
+<li>command + r 编译并运行当前工程</li>
+<li>command + b 仅编译工程</li>
+<li>command + . 结束运行中的工程或者取消编译中的工程</li>
+<li>F6 从断点处执行下一行代码(stepOver)</li>
+<li>F7 跳到当前的函数内部调试(stepInto)</li>
+<li>F8 从当前函数中返回(stepOut)</li>
+</ol>
+<h3 id="3-2-Xcode快捷键相关资料"><a href="#3-2-Xcode快捷键相关资料" class="headerlink" title="3.2 Xcode快捷键相关资料"></a>3.2 Xcode快捷键相关资料</h3><ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010560-CH1-SW1">官方文档</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/419f2dddd58b">五分钟深度记忆你的Xcode快捷键</a></p>
+</li>
+<li><p>为了更便捷地记忆使用快捷键，可以下载安装<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.mediaatelier.com/CheatSheet/CheatSheet_1.6.zip">cheat sheet</a> 并在Xcode界面按住<strong>command</strong>键几秒钟，就会自动弹出如下图所示所有XCode的快捷键。</p>
+  <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gocb2hwyimj31ev0u04ee.jpg" style="zoom:50%;" /></li>
+</ul>
+<h2 id="4-切换Xcode版本"><a href="#4-切换Xcode版本" class="headerlink" title="4. 切换Xcode版本"></a>4. 切换Xcode版本</h2><ol>
+<li>显示当前使用的Xcode：<code>xcode-select -p</code></li>
+<li>切换Xcode版本：<code>sudo xcode-select -s /Applications/Xcode10.2/Xcode.app/Contents/Developer</code> 后面为要切换Xcode版本的路径</li>
+<li>查看当前版本：<code>gcc --version</code></li>
+</ol>
+<h2 id="Xcode官方文档和参考资料"><a href="#Xcode官方文档和参考资料" class="headerlink" title=". Xcode官方文档和参考资料"></a>. Xcode官方文档和参考资料</h2><p>以上只是一个关于Xcode的粗略的介绍，如果想要更详细地了解Xcode，请阅读Xcode的官方文档。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.apple.com/documentation/xcode?language=objc">https://developer.apple.com/documentation/xcode?language=objc</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://help.apple.com/xcode/mac/11.0/index.html?localePath=en.lproj#/devc8c2a6be1">https://help.apple.com/xcode/mac/11.0/index.html?localePath=en.lproj#/devc8c2a6be1</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.apple.com/library/archive/navigation/#section=Topics&amp;topic=Xcode">https://developer.apple.com/library/archive/navigation/#section=Topics&amp;topic=Xcode</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://suoyita.github.io/archives/a084818e.html" title="XCode introduction">https://suoyita.github.io/archives/a084818e.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/iOS/" rel="tag"># iOS</a>
+              <a href="/tags/XCode/" rel="tag"># XCode</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/4a17b156.html" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XCode-Overview"><span class="nav-number">1.</span> <span class="nav-text">XCode Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%BB%E7%95%8C%E9%9D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">1.  主界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Navigator-Area"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 Navigator Area</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 实用工具栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Editor-Area"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 Editor Area</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%B0%83%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">2.  调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Crashes-Exception-%E5%92%8C-Runtime-Issues-%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 Crashes, Exception 和 Runtime Issues 定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%A3%80%E6%9F%A5%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E8%BF%87%E8%BD%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2  检查系统资源过载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 设置断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Runtime-Issue"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 Runtime Issue:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1-Address-santizers"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">2.4.1   Address santizers</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Xcode%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.3.</span> <span class="nav-text">3. Xcode快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 常用快捷键介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Xcode%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 Xcode快捷键相关资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%88%87%E6%8D%A2Xcode%E7%89%88%E6%9C%AC"><span class="nav-number">1.4.</span> <span class="nav-text">4. 切换Xcode版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Xcode%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%92%8C%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.5.</span> <span class="nav-text">. Xcode官方文档和参考资料</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kai"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/suoyita" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;suoyita" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:chengkaithu@gmail.com" title="E-Mail → mailto:chengkaithu@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/suoyita" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;suoyita" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">5k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
